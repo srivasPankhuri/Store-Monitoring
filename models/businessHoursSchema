@@ -1,0 +1,22 @@
+const mongoose = require("mongoose");
+
+const businessHoursSchema = new mongoose.Schema({
+  store_id: {
+    type: String,
+    required: true,
+  },
+  dayOfWeek: {
+    type: Number,
+    required: true,
+  },
+  start_time_local: {
+    type: String,
+  },
+  end_time_local: {
+    type: String,
+  },
+});
+
+const BusinessHours = mongoose.model("BusinessHours", businessHoursSchema);
+
+module.exports = BusinessHours;
